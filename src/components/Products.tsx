@@ -65,23 +65,23 @@ const Products = () => {
   };
 
   return (
-    <section id="products" className="py-24 relative">
+    <section id="products" className="py-16 sm:py-20 lg:py-24 relative">
       <div className="container mx-auto px-4">
         {/* Section Header */}
-        <div className="text-center mb-16 animate-slide-up">
-          <h2 className="text-4xl lg:text-6xl font-bold text-gradient mb-6">
+        <div className="text-center mb-12 sm:mb-16 animate-slide-up">
+          <h2 className="text-3xl sm:text-4xl lg:text-6xl font-bold text-gradient mb-4 sm:mb-6">
             Premium Solar Solutions
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto">
             Discover our cutting-edge LiFePO4 batteries and smart BMS systems. 
             Built for the future, designed for efficiency.
           </p>
         </div>
 
         {/* Products Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {products.map((product, index) => (
-            <div 
+            <div
               key={product.id} 
               className="product-card group animate-scale-in"
               style={{ animationDelay: `${index * 0.1}s` }}
@@ -99,40 +99,40 @@ const Products = () => {
               </div>
 
               {/* Product Image */}
-              <div className="relative mb-6 overflow-hidden rounded-xl">
+              <div className="relative mb-4 sm:mb-6 overflow-hidden rounded-xl">
                 <img 
                   src={product.image}
                   alt={product.name}
-                  className="w-full h-48 object-contain bg-muted/10 group-hover:scale-110 transition-transform duration-500"
+                  className="w-full h-40 sm:h-48 object-contain bg-muted/10 group-hover:scale-110 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-card/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
               </div>
 
               {/* Product Info */}
-              <div className="space-y-4">
+              <div className="space-y-3 sm:space-y-4">
                 <div>
-                  <h3 className="text-xl font-bold text-foreground mb-2">{product.name}</h3>
-                  <p className="text-secondary font-medium">{product.tagline}</p>
+                  <h3 className="text-lg sm:text-xl font-bold text-foreground mb-2">{product.name}</h3>
+                  <p className="text-secondary font-medium text-sm sm:text-base">{product.tagline}</p>
                 </div>
 
                 {/* Features */}
-                <div className="grid grid-cols-2 gap-2">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                   {product.features.map((feature, i) => (
-                    <div key={i} className="flex items-center space-x-2 text-sm text-muted-foreground">
-                      {i === 0 && <Zap className="w-4 h-4 text-primary" />}
-                      {i === 1 && <Battery className="w-4 h-4 text-secondary" />}
-                      {i === 2 && <Cpu className="w-4 h-4 text-accent" />}
-                      {i === 3 && <Shield className="w-4 h-4 text-primary" />}
-                      <span>{feature}</span>
+                    <div key={i} className="flex items-center space-x-2 text-xs sm:text-sm text-muted-foreground">
+                      {i === 0 && <Zap className="w-3 h-3 sm:w-4 sm:h-4 text-primary flex-shrink-0" />}
+                      {i === 1 && <Battery className="w-3 h-3 sm:w-4 sm:h-4 text-secondary flex-shrink-0" />}
+                      {i === 2 && <Cpu className="w-3 h-3 sm:w-4 sm:h-4 text-accent flex-shrink-0" />}
+                      {i === 3 && <Shield className="w-3 h-3 sm:w-4 sm:h-4 text-primary flex-shrink-0" />}
+                      <span className="truncate">{feature}</span>
                     </div>
                   ))}
                 </div>
 
                 {/* Pricing */}
-                <div className="flex items-center space-x-3">
-                  <span className="text-2xl font-bold text-gradient">{product.price}</span>
+                <div className="flex flex-wrap items-center gap-2 sm:gap-3">
+                  <span className="text-xl sm:text-2xl font-bold text-gradient">{product.price}</span>
                   {product.originalPrice && (
-                    <span className="text-lg text-muted-foreground line-through">{product.originalPrice}</span>
+                    <span className="text-base sm:text-lg text-muted-foreground line-through">{product.originalPrice}</span>
                   )}
                   {product.originalPrice && (
                     <span className="px-2 py-1 text-xs bg-secondary/20 text-secondary rounded-full font-semibold">
@@ -144,11 +144,11 @@ const Products = () => {
                 {/* Buy Button */}
                 <button
                   onClick={() => handleBuyNow(product.name, product.whatsappMessage)}
-                  className="w-full btn-hero group"
+                  className="w-full btn-hero group text-sm sm:text-base py-2 sm:py-3"
                 >
-                  <ShoppingCart className="w-5 h-5 mr-2" />
+                  <ShoppingCart className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
                   Buy Now
-                  <span className="ml-auto opacity-75 group-hover:opacity-100 transition-opacity">
+                  <span className="ml-auto opacity-75 group-hover:opacity-100 transition-opacity text-xs sm:text-sm">
                     WhatsApp
                   </span>
                 </button>
@@ -158,15 +158,15 @@ const Products = () => {
         </div>
 
         {/* Additional CTA */}
-        <div className="text-center mt-16">
-          <p className="text-lg text-muted-foreground mb-6">
+        <div className="text-center mt-12 sm:mt-16">
+          <p className="text-base sm:text-lg text-muted-foreground mb-4 sm:mb-6">
             Need a custom solution? Our experts are ready to help.
           </p>
           <a 
             href="https://wa.me/1234567890?text=Hi,%20I%20need%20a%20custom%20solar%20solution.%20Can%20we%20discuss%20my%20requirements?"
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-ghost-glow"
+            className="btn-ghost-glow text-sm sm:text-base"
           >
             Get Custom Quote
           </a>

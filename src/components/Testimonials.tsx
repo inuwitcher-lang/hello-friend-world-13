@@ -53,52 +53,52 @@ const Testimonials = () => {
   ];
 
   return (
-    <section id="testimonials" className="py-24 relative">
+    <section id="testimonials" className="py-16 sm:py-20 lg:py-24 relative">
       <div className="container mx-auto px-4">
         {/* Section Header */}
-        <div className="text-center mb-16 animate-slide-up">
-          <h2 className="text-4xl lg:text-6xl font-bold text-gradient mb-6">
+        <div className="text-center mb-12 sm:mb-16 animate-slide-up">
+          <h2 className="text-3xl sm:text-4xl lg:text-6xl font-bold text-gradient mb-4 sm:mb-6">
             What Our Customers Say
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto">
             Don't just take our word for it. Here's what real customers are saying 
             about their ECOTECH experience.
           </p>
         </div>
 
         {/* Testimonials Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {testimonials.map((testimonial, index) => (
-            <div 
+            <div
               key={index}
               className="testimonial-card animate-scale-in"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               {/* Quote Icon */}
-              <div className="flex justify-between items-start mb-4">
-                <Quote className="w-8 h-8 text-primary/30" />
+              <div className="flex justify-between items-start mb-3 sm:mb-4">
+                <Quote className="w-6 h-6 sm:w-8 sm:h-8 text-primary/30" />
                 <div className="flex space-x-1">
                   {Array.from({ length: testimonial.rating }).map((_, i) => (
-                    <Star key={i} className="w-4 h-4 fill-secondary text-secondary" />
+                    <Star key={i} className="w-3 h-3 sm:w-4 sm:h-4 fill-secondary text-secondary" />
                   ))}
                 </div>
               </div>
 
               {/* Testimonial Text */}
-              <blockquote className="text-foreground leading-relaxed mb-6">
+              <blockquote className="text-sm sm:text-base text-foreground leading-relaxed mb-4 sm:mb-6">
                 "{testimonial.text}"
               </blockquote>
 
               {/* Customer Info */}
-              <div className="flex items-center space-x-4">
+              <div className="flex items-center space-x-3 sm:space-x-4">
                 <img 
                   src={testimonial.avatar}
                   alt={testimonial.name}
-                  className="w-12 h-12 rounded-full border-2 border-primary/20"
+                  className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border-2 border-primary/20"
                 />
                 <div>
-                  <h4 className="font-semibold text-foreground">{testimonial.name}</h4>
-                  <p className="text-sm text-muted-foreground">{testimonial.title}</p>
+                  <h4 className="font-semibold text-foreground text-sm sm:text-base">{testimonial.name}</h4>
+                  <p className="text-xs sm:text-sm text-muted-foreground">{testimonial.title}</p>
                   <p className="text-xs text-primary">{testimonial.project}</p>
                 </div>
               </div>
@@ -110,31 +110,31 @@ const Testimonials = () => {
         </div>
 
         {/* Trust Indicators */}
-        <div className="mt-20 grid grid-cols-2 lg:grid-cols-4 gap-8 items-center justify-items-center opacity-60">
+        <div className="mt-16 sm:mt-20 grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 items-center justify-items-center opacity-60">
           <div className="text-center">
-            <div className="text-2xl font-bold text-primary mb-2">4.9/5</div>
-            <div className="text-sm text-muted-foreground">Average Rating</div>
+            <div className="text-xl sm:text-2xl font-bold text-primary mb-2">4.9/5</div>
+            <div className="text-xs sm:text-sm text-muted-foreground">Average Rating</div>
           </div>
           <div className="text-center">
-            <div className="text-2xl font-bold text-secondary mb-2">10K+</div>
-            <div className="text-sm text-muted-foreground">Reviews</div>
+            <div className="text-xl sm:text-2xl font-bold text-secondary mb-2">10K+</div>
+            <div className="text-xs sm:text-sm text-muted-foreground">Reviews</div>
           </div>
           <div className="text-center">
-            <div className="text-2xl font-bold text-accent mb-2">99%</div>
-            <div className="text-sm text-muted-foreground">Satisfaction</div>
+            <div className="text-xl sm:text-2xl font-bold text-accent mb-2">99%</div>
+            <div className="text-xs sm:text-sm text-muted-foreground">Satisfaction</div>
           </div>
           <div className="text-center">
-            <div className="text-2xl font-bold text-primary mb-2">50K+</div>
-            <div className="text-sm text-muted-foreground">Happy Customers</div>
+            <div className="text-xl sm:text-2xl font-bold text-primary mb-2">50K+</div>
+            <div className="text-xs sm:text-sm text-muted-foreground">Happy Customers</div>
           </div>
         </div>
 
         {/* Call to Action */}
-        <div className="text-center mt-16">
-          <h3 className="text-2xl font-bold text-gradient mb-4">
+        <div className="text-center mt-12 sm:mt-16">
+          <h3 className="text-xl sm:text-2xl font-bold text-gradient mb-3 sm:mb-4">
             Ready to Join Our Success Stories?
           </h3>
-          <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
+          <p className="text-sm sm:text-base text-muted-foreground mb-6 sm:mb-8 max-w-2xl mx-auto">
             Experience the quality and reliability that thousands of customers trust. 
             Let's discuss your energy needs and create your success story.
           </p>
@@ -142,7 +142,7 @@ const Testimonials = () => {
             href="https://wa.me/1234567890?text=Hi,%20I%20want%20to%20join%20your%20success%20stories!%20Can%20you%20help%20me%20with%20solar%20solutions?"
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-hero"
+            className="btn-hero text-sm sm:text-base"
           >
             Share Your Story With Us
           </a>
